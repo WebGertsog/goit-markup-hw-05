@@ -21,6 +21,9 @@ body{
     font-family: Roboto, sans-serif;
     font-weight: 400;
 }
+p{
+    margin: 0;
+}
 
 /* отзывчивые изображения */
 img {
@@ -93,6 +96,7 @@ img {
 }
 
 .site-nav .nav-link{
+    position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -111,6 +115,17 @@ img {
 
 .site-nav .nav-link.current{
     color: var(--accent-text-color);
+}
+.nav-link.current::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    display: block;
+    background: #2196F3;
+    border-radius: 2px;
 }
 
 .contacts{
@@ -205,6 +220,16 @@ img {
     height: 1px;
     margin: -1px;
 }
+.section-tiltle{
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-weight: var(--bold-font);
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--title-text-color);
+}
 
 /* QUALITIES */
 
@@ -267,15 +292,28 @@ img {
     margin-right: 30px;
 }
 
-.section-tiltle{
-    margin-top: 0;
-    margin-bottom: 50px;
+.direction-item{
+    position: relative;
+}
+.directioon-lable{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+
+    background: rgba(47, 48, 58, 0.8);
+}
+.directioon-lable-text{
     font-weight: var(--bold-font);
-    font-size: 36px;
-    line-height: 1.17;
-    text-align: center;
+    font-size: 14px;
+    line-height: 1.42;
     letter-spacing: 0.03em;
-    color: var(--title-text-color);
+    text-transform: uppercase;
+    color: var(--main-bg-color);
 }
 
 /* TEAM */
@@ -455,7 +493,11 @@ img {
 .products .products-item:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+/* ------------------------------------------------------------------------------------ */
 
+.products-thumb{
+    position: relative;
+}
 .products-bottom-block{
     padding: 20px 24px;
     border-right: var(--bottom-border);
@@ -480,6 +522,35 @@ img {
     line-height: 1.87;
     letter-spacing: 0.03em;
     color: var(--main-text-color);
+}
+/* ===overlay=== */
+
+.products-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 63px 24px;
+
+    background: rgba(33, 150, 243, 0.9);
+
+    opacity: 0;
+}
+.products-overlay:hover{
+    opacity: 1;
+}
+
+.products-overlay-text{
+
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--main-bg-color);
 }
 
 /* FOOTER */
@@ -563,9 +634,11 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: 44px;
     height: 44px;
     border-radius: 50% 50%;
+
     background-color: rgba(255, 255, 255, 0.1);
     fill: var(--main-bg-color);
 }
@@ -579,4 +652,51 @@ img {
 .socials-icons{
     width: 20px;
     height: 20px;
+}
+
+/* ===MODAL=== */
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden{
+    opacity: 0;
+    pointer-events: none; /*сообщает событию мыши проходить "через" элемент и обращаться к элементу, находящемуся "под" ним */
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 528px;
+    height: 581px;
+
+    background: var(--main-bg-color);
+}
+.close-button{
+    padding: 0;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50% 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    background: var(--main-bg-color);
+}
+.icon-cross{
+    padding: 0;
+    fill: #000;
 }
