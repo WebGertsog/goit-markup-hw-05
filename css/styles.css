@@ -106,6 +106,10 @@ img {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .nav-link:hover,
@@ -153,6 +157,10 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--main-text-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts .contacts-link:hover,
@@ -199,10 +207,15 @@ img {
     line-height: 1.87;
     text-align: center;
     letter-spacing: 0.06em;
+    border-radius: 4px;
     color: var(--main-bg-color);
     background-color: var(--accent-text-color);
     border-style: none;
-    border-radius: 4px;
+
+    transition-property: background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .main-button:hover,
@@ -380,7 +393,12 @@ img {
     align-items: center;
     width: 44px;
     height: 44px;
+    border-radius: 50% 50%;
     fill: var(--main-icons-color);
+
+    transition-property: border-radius, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-icons-link:hover,
@@ -407,14 +425,18 @@ img {
 }
 
 .clients-link{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 170px;
-   height: 92px;
-   border: 1px solid var(--main-icons-color);
-   border-radius: 4px;
-   fill: var(--main-icons-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--main-icons-color);
+    border-radius: 4px;
+    fill: var(--main-icons-color);
+
+    transition-property: fill, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item:not(:last-child){
@@ -424,9 +446,6 @@ img {
 .clients-link:hover,
 .clients-link:focus{
     fill: var(--accent-text-color);
-}
-
-.clients-link:hover{
     border: 1px solid var(--accent-text-color);
 }
 
@@ -456,6 +475,10 @@ img {
     border-color: transparent;
     border-style: none;
     border-radius: 4px;
+
+    transition-property: color, background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons-filter:hover,
@@ -599,6 +622,9 @@ img {
     line-height: 1.7;
     letter-spacing: 0.03em;
     color: var(--contacts-text-color);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-list .footer-contacts:hover,
@@ -641,6 +667,10 @@ img {
 
     background-color: rgba(255, 255, 255, 0.1);
     fill: var(--main-bg-color);
+
+    transition-property: border-radius, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover,
